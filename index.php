@@ -1,9 +1,9 @@
 <?php
 
-include "vendor/autoload.php";
+use App\Utilities\url;
+
+include "bootstrap/init.php";
 
 #front controller
-// echo "Hello World !!!";
-// echo $_SERVER['REQUEST_URI'];
 
-new App\Core\Requset(); 
+echo url::curent();
