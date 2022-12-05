@@ -1,9 +1,9 @@
 <?php
+#front controller
+use App\Core\Routing\Route;
 
-use App\Core\SimpleRouter;
 
 include "bootstrap/init.php";
-#front controller
-$router = new SimpleRouter();
-$router->run();
+
+var_dump(Route::routes());
 
