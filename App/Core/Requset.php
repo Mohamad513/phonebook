@@ -13,7 +13,7 @@ class Requset{
     public function __construct()
     {
         $this->params = $_REQUEST;
-        $this->method = $_SERVER["REQUEST_METHOD"];
+        $this->method = strtolower($_SERVER["REQUEST_METHOD"]);
         $this->agent = $_SERVER["HTTP_USER_AGENT"];
         $this->ip = $_SERVER["SERVER_ADDR"];
         $this->uri = strtok($_SERVER["REQUEST_URI"],'?');

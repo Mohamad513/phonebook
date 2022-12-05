@@ -4,7 +4,7 @@ use App\Core\Routing\Route;
 
 Route::get('/null');
 
-Route::get('/',function(){
+Route::get('/a',function(){
     echo "wellcome";
 });
 
