@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width , initial-scale=1.0">
     <title>404</title>
 </head>
-<body style="background:red">
+<body style="background:gray">
     <h2 style="text-align:center;margin:100px;">
-        Page Not Found
+        404<br>Page Not Found
     </h2>
 </body>
 </html>

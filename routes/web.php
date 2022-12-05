@@ -2,13 +2,13 @@
 
 use App\Core\Routing\Route;
 
-Route::get('/null');
+Route::get('/','HomeController@index');
 
 Route::get('/a',function(){
     echo "wellcome";
 });
 
-Route::post('/saveForm',function(){
+Route::get('/saveForm',function(){
     echo "save ok";
 });
 

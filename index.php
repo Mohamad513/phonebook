@@ -9,3 +9,4 @@ include "bootstrap/init.php";
 
 $router = new Router();
 // $router->findRoute($reguest);
+$router->run();
