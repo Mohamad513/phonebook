@@ -2,7 +2,6 @@
 
 namespace App\Core\Routing;
 use App\Core\Requset;
-use App\Controllers\homeController;
 class Router
 {
     private $request;
@@ -62,7 +61,8 @@ class Router
                 
             $controller = new $class_name();
 
-            if(!method_exists($method,$class_name))
+
+            if(!method_exists($controller,$method))
             throw new \Exception("method $method Is Not Exists In $class_name Not ");
 
             $controller->{$method}();
