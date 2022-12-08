@@ -1,9 +1,20 @@
 <?php
 
 use App\Core\Routing\Route;
+use App\Middleware\BlockFirefox;
 
 Route::get('/','HomeController@index');
-Route::get('/todo/list','TodoController@list');
+
+Route::get('/todo/list','TodoController@list',[BlockFirefox::class]);
+
+
+Route::get('/post/{slug}','PostController@single');
+Route::get('/post/{slug}/comment/{cid}','PostController@single');
+
+
+
+
+Route::get('/todo/list','TodoController@list',[BlockFirefox::class]);
 
 Route::get('/archive','ArchiveController@index');
 Route::get('/archive/products','ArchiveController@products');

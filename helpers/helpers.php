@@ -1,5 +1,13 @@
 <?php
 
+function strContains($str,$needle,$case_sensitive = 0){
+    if($case_sensitive)
+        $pos=strpos($str,$needle);
+    else
+        $pos = stripos($str,$needle);
+    return ($pos !== false) ? true : false;
+}
+
 function siteurl($route){
     return $_ENV["HOST"] . $route;  
 }

@@ -2,29 +2,58 @@
 
 namespace App\Core\Routing;
 use App\Core\Requset;
-class Router
-{
+use App\Core\Routing\Route;
+
+class Router{
+
     private $request;
     private $routes;
     private $current_route;
     const BASE_CONTROLLER = "App\Controllers\\";
 
-    public function __construct()
-    {
+    public function __construct(){
+
         $this->request = new Requset();
         $this->routes = Route::routes();
         $this->current_route = $this->findRoute($this->request) ?? null ;
+        $this->run_route_middleware();
         // var_dump($this->current_route);
+    }  
+        
+    private function run_route_middleware(){
+        $middleware = $this->current_route['middleware'] ?? [];
+        foreach($middleware as $middlewre_class){
+            $middleware_obj = new $middlewre_class();
+            $middleware_obj->handle();
+        }
+
     }
 
-    public function findRoute(Requset $request)
-    {
-                foreach ($this->routes as $route) {
-            if (in_array($request->method(),$route['methods']) && $request->uri() == $route['uri']) {
+    public function findRoute(Requset $request){
+
+        foreach ($this->routes as $route){
+            if (!in_array($request->method(),$route['methods'])){
+                return false;
+            }
+            if($this->regex_matched($route)){
                 return $route;
             }
         }
         return null;
+    }
+
+    public function regex_matched($route){
+        global $reguest;
+        $pattern = "/^".str_replace(['/','{','}'],['\/','(?<','>[-%\w]+)'],$route['uri'])."$/";
+        $result = preg_match($pattern,$this->request->uri(),$matches);
+        if (!$result) {
+            return false;
+        }
+        foreach($matches as $key => $value){
+            if(!is_int($key))
+                $reguest->add_route_param($key,$value);
+        }
+        return true;
     }
 
     public function dispatch404(){
@@ -40,7 +69,7 @@ class Router
     }
 
     private function dispatch($route){
-        $action = $route['action'];
+        $action = $route['action'] ?? null;
         if(is_null('action') || empty('action'))
         return;
 
@@ -64,9 +93,8 @@ class Router
 
             if(!method_exists($controller,$method))
             throw new \Exception("method $method Is Not Exists In $class_name Not ");
-
             $controller->{$method}();
-
+            
         }
     }
 }
