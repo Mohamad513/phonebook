@@ -13,9 +13,6 @@ Route::get('/post/{slug}/comment/{cid}','PostController@single');
 
 
 
-
-Route::get('/todo/list','TodoController@list',[BlockFirefox::class]);
-
 Route::get('/archive','ArchiveController@index');
 Route::get('/archive/products','ArchiveController@products');
 Route::get('/archive/articles','ArchiveController@articles');
