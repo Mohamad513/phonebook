@@ -11,9 +11,9 @@ abstract class BaseModel implements CrudInterface{
     protected $pagesize = 10;
     protected $attributes = [];
 
-    protected function __construct(){
+    // protected function __construct(){
 
-    }
+    // }
 
     protected function getAttribute($key){
 

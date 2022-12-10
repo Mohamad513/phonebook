@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => '__root__',
-        'pretty_version' => 'dev-master',
-        'version' => 'dev-master',
-        'reference' => 'c44cefae5dbe4aa446cdb4c00e67eee8230eab50',
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => '5486df624e00aafe4144f5bcffa552532b3eca93',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,11 +11,20 @@
     ),
     'versions' => array(
         '__root__' => array(
-            'pretty_version' => 'dev-master',
-            'version' => 'dev-master',
-            'reference' => 'c44cefae5dbe4aa446cdb4c00e67eee8230eab50',
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => '5486df624e00aafe4144f5bcffa552532b3eca93',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'catfan/medoo' => array(
+            'pretty_version' => 'v2.1.7',
+            'version' => '2.1.7.0',
+            'reference' => '74be58f80d330d1075ef3bfd0fb3d057349597ae',
+            'type' => 'framework',
+            'install_path' => __DIR__ . '/../catfan/medoo',
             'aliases' => array(),
             'dev_requirement' => false,
         ),

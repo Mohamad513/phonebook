@@ -32,6 +32,10 @@ class ComposerStaticInit1b8f896e9754af6a1dc0efec2eddbce1
         array (
             'PhpOption\\' => 10,
         ),
+        'M' => 
+        array (
+            'Medoo\\' => 6,
+        ),
         'L' => 
         array (
             'League\\Pipeline\\' => 16,
@@ -83,6 +87,10 @@ class ComposerStaticInit1b8f896e9754af6a1dc0efec2eddbce1
         'PhpOption\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpoption/phpoption/src/PhpOption',
+        ),
+        'Medoo\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/catfan/medoo/src',
         ),
         'League\\Pipeline\\' => 
         array (
