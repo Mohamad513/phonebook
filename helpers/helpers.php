@@ -8,7 +8,13 @@ function strContains($str,$needle,$case_sensitive = 0){
     return ($pos !== false) ? true : false;
 }
 
-function siteurl($route){
+function asset_url($route = ''){
+    
+    return site_url("assets/".$route);
+
+}
+
+function site_url($route){
     return $_ENV["HOST"] . $route;  
 }
 function view($path,$data = []){

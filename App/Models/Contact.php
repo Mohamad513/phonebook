@@ -3,8 +3,8 @@
 namespace App\Models;
 use App\Models\Contract\MysqlBaseModel;
 
-class User extends MysqlBaseModel{
+class Contact extends MysqlBaseModel{
 
-    public $table = 'users';
+    public $table = 'contacts';
 
 }

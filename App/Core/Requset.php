@@ -48,7 +48,7 @@ class Requset{
         return isset($this->params[$key]);
     }
     public function redirect($route){
-        header("location :" . siteurl($route));
+        header("location :" . site_url($route));
         die();
     }
 }
